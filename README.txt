@@ -1,19 +1,15 @@
 THE ARCH COLLECTIVE - website
-Open index.html to view. Hosting: upload this whole folder (GitHub Pages / Cloudflare Pages).
+Open index.html to view. To host: upload this whole folder (GitHub Pages / Cloudflare Pages).
 
-COLOURS: only cream #FFF8DE and terracotta #911700 (brand guidelines v2).
+COLOURS (brand guidelines v2): warm white #FBFAF9, cream #FFF8DE, terracotta #911700. Nothing else.
 
-PHOTOS (assets/) - each file is used once
-  strip-01 ... strip-09   the sliding picture strip under the hero video (in order)
-  hospitality-01 ... 09   Selected work > Hospitality (in the order the client sent them)
-  brand-01 ... 04         Selected work > Brand experiences (IMG_9018.MOV still to come)
-  spatial-01, spatial-02..05  Selected work > Spatial design (photo + tap-to-play signage videos; more IMG_20xx videos to come)
-  logos + textures        archco-*.png, logo-*.png, tex-*.jpg (do not rename: CSS uses them)
-To swap a photo, replace the file and keep the same name. Update the alt="" text and caption in index.html if the subject changes.
+ADDING TO THE PORTFOLIO (the "What we do" tabs)
+  Open portfolio.js. Each category is one block. To add a photo: save it in the matching assets/ folder and add one line
+  to that category's items (instructions are at the top of the file). To add a video, use a small .mp4 plus a poster image.
 
-HERO: one photo, assets/hero-photo.jpg (swap the file, keep the name).
+FORMS (enquiry pop-up + job applications)
+  Both save to a Google Sheet AND arrive as an email. Setup: apps-script/Code.gs (steps are in the comments there / in the chat).
+  Then paste the web app URL into config.js (formEndpoint). Until then, the forms open an email draft instead.
 
-APPLICATION FORM  application.html -> data-endpoint="..."
-  Paste your Google Apps Script web app URL there (code + steps: apps-script/Code.gs). Emails go to studio@archcollectivegh.com.
-
-EXPERIENCES CARDS: strip-01 ... strip-09 are now clickable cards; the short descriptions are in index.html (section id="experiences").
+JOB ROLES  index.html > "Careers": each role links to application.html?role=... (host-team, art-director, strategist, other).
+FOLDERS    assets/site (hero, logo), tables, floral, events, styling, spatial, brand, hospitality

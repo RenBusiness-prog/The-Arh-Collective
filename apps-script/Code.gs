@@ -2,7 +2,7 @@
 // Emails every application to the studio inbox AND saves a row in this Google Sheet.
 
 const TO_EMAIL = "studio@archcollectivegh.com";
-const SHEET_NAME = "Applications";
+const DEFAULT_SHEET = "Applications"; // each form sends its own tab name (_sheet), e.g. "Enquiries"
 
 function doPost(e) {
   try {
@@ -14,7 +14,7 @@ function doPost(e) {
 
     // 1) save to the sheet
     const ss = SpreadsheetApp.getActiveSpreadsheet();
-    const sheet = ss.getSheetByName(SHEET_NAME) || ss.insertSheet(SHEET_NAME);
+    const sheet = ss.getSheetByName(p._sheet || DEFAULT_SHEET) || ss.insertSheet(p._sheet || DEFAULT_SHEET);
     let headers = sheet.getLastColumn() ? sheet.getRange(1, 1, 1, sheet.getLastColumn()).getValues()[0] : [];
     if (!headers.length) headers = ["Submitted"];
     keys.forEach(function (k) { if (headers.indexOf(k) === -1) headers.push(k); });
